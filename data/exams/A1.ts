@@ -1,4 +1,4 @@
-import { Question, Option } from '../../types';
+import { Question, Option } from '../../types.ts';
 import { DS_OPTIONS } from '../questions';
 
 // Standard Roman Numeral Problem Solving Options
@@ -138,7 +138,7 @@ export const EXAM_A1_QUESTIONS: Record<number, Question> = {
     text: 'A coin is biased such that the probability of landing heads is not $\\frac{1}{2}$. What is the probability that two consecutive tosses of this coin will both land heads?',
     statements: [
       'The probability of landing heads on a single toss is $\\frac{1}{3}$.',
-      'The probability of landing exactly one head in two tosses is $\\frac{4}{9}$.'
+      'The probability of landing exactly one head in two tosses is $\\frac{2}{9}$.'
     ],
     options: DS_OPTIONS,
     correctAnswer: 'A',
@@ -150,24 +150,18 @@ export const EXAM_A1_QUESTIONS: Record<number, Question> = {
       Then, $P(H)^2 = (\\frac{1}{3})^2 = \\frac{1}{9}$.
       This statement provides a unique value for the probability. Statement (1) ALONE is sufficient.
 
-      **Statement (2):** The probability of landing exactly one head in two tosses is $\\frac{4}{9}$.
-      This means $P(HT) + P(TH) = \\frac{4}{9}$.
-      $P(H) \\times P(T) + P(T) \\times P(H) = \\frac{4}{9}$.
-      $2 \\times P(H) \\times P(T) = \\frac{4}{9}$.
+      **Statement (2):** The probability of landing exactly one head in two tosses is $\\frac{2}{9}$.
+      This means $P(HT) + P(TH) = \\frac{2}{9}$.
+      $P(H) \\times P(T) + P(T) \\times P(H) = \\frac{2}{9}$.
+      $2 \\times P(H) \\times P(T) = \\frac{2}{9}$.
       Substitute $P(T) = 1 - P(H)$:
-      $2 \\times P(H) \\times (1 - P(H)) = \\frac{4}{9}$.
-      $2P(H) - 2P(H)^2 = \\frac{4}{9}$.
-      Multiply by $9$: $18P(H) - 18P(H)^2 = 4$.
-      Rearrange into a quadratic equation: $9P(H)^2 - 9P(H) + 2 = 0$.
-      Factor this quadratic equation:
-      $(3P(H) - 1)(3P(H) - 2) = 0$.
-      This gives two possible values for $P(H)$:
-      $3P(H) - 1 = 0 \\Rightarrow P(H) = \\frac{1}{3}$.
-      $3P(H) - 2 = 0 \\Rightarrow P(H) = \\frac{2}{3}$.
-
-      If $P(H) = \\frac{1}{3}$, then $P(H)^2 = (\\frac{1}{3})^2 = \\frac{1}{9}$.
-      If $P(H) = \\frac{2}{3}$, then $P(H)^2 = (\\frac{2}{3})^2 = \\frac{2}{9}$.
-      Since there are two possible values for $P(H)^2$, Statement (2) ALONE is NOT sufficient.
+      $P(H) \\times (1 - P(H)) = \\frac{1}{9}$.
+      $P(H) - P(H)^2 = \\frac{1}{9}$.
+      Rearrange into a quadratic equation: $9P(H)^2 - 9P(H) + 1 = 0$.
+      Using the quadratic formula, $P(H) = \\frac{-(-9) \\pm \\sqrt{(-9)^2 - 4(9)(1)}}{2(9)} = \\frac{9 \pm \\sqrt{81 - 36}}{18} = \\frac{9 \pm \\sqrt{45}}{18}$.
+      This gives two possible values for $P(H)$.
+      Since there are two possible values for $P(H)$, there will be two possible values for $P(H)^2$.
+      Statement (2) ALONE is NOT sufficient.
 
       Thus, the correct answer is A.`
   },

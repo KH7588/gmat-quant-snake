@@ -1,5 +1,5 @@
 import { Question, Option } from '../../types.ts';
-import { DS_OPTIONS } from '../questions.ts';
+import { DS_OPTIONS } from '../questions';
 
 export const EXAM_A7_QUESTIONS: Record<number, Question> = {
   1: {
