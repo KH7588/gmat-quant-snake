@@ -1,5 +1,5 @@
-import { Question, Option } from '../../types';
-import { DS_OPTIONS } from '../questions';
+import { Question, Option } from '../../types.ts';
+import { DS_OPTIONS } from '../questions.ts';
 
 export const EXAM_A6_QUESTIONS: Record<number, Question> = {
   1: {
