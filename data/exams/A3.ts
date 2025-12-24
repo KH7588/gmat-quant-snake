@@ -364,8 +364,8 @@ export const EXAM_A3_QUESTIONS: Record<number, Question> = {
     id: 'A3-q9',
     text: `If $x, y,$ and $z$ are three distinct integers, does $y$ lie between $x$ and $z$ on the number line? <br/>* $\\min(A, B)$ means the smaller value between $A$ and $B$. For example, $\\min(5, 3) = 3$.<br/>* $\\max(A, B)$ means the larger value between $A$ and $B$. For example, $\\max(5, 3) = 5$.`,
     statements: [
-      '$y$ is the minimum value of the set $\{ \\max(x, y), \\max(y, z), \\max(z, x) \\}$.',
-      '$y$ is the maximum value of the set $\{ \\min(x, y), \\min(y, z), \\min(z, x) \\}$.'
+      '$y$ is the minimum value of the set {max(x, y), max(y, z), max(z, x)}.',
+      '$y$ is the maximum value of the set {min(x, y), min(y, z), min(z, x)}.'
     ],
     options: DS_OPTIONS,
     correctAnswer: 'D',

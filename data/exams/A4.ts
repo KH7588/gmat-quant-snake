@@ -1,5 +1,5 @@
-import { Question, Option } from '../../types';
-import { DS_OPTIONS } from '../questions';
+import { Question, Option } from '../../types.ts';
+import { DS_OPTIONS } from '../questions.ts';
 
 // Specific options for A4-Q2
 const PS_NUMERICAL_OPTIONS_A4_Q2: Option[] = [
@@ -59,61 +59,36 @@ const PS_NUMERICAL_OPTIONS_A4_Q12: Option[] = [
 export const EXAM_A4_QUESTIONS: Record<number, Question> = {
   1: {
     id: 'A4-q1',
-    text: 'If $n$ and $r$ are positive integers such that $n$ is divisible by $10r$ but is not divisible by $10r+1$, what is the value of $r$?',
+    text: 'If $n$ and $r$ are positive integers such that $n$ is divisible by $10^r$ but is not divisible by $10^{r+1}$, what is the value of $r$?',
     statements: [
-      '$n$ is divisible by $25$ but is not divisible by $26$.',
-      '$n$ is divisible by $56$ but is not divisible by $57$.'
+      '$n$ is divisible by $2^5$ but is not divisible by $2^6$.',
+      '$n$ is divisible by $5^6$ but is not divisible by $5^7$.'
     ],
     options: DS_OPTIONS,
     correctAnswer: 'C',
-    explanation: `The question asks for the value of the positive integer $r$, given that $n$ is divisible by $10r$ but not by $10r+1$. This implies that $10r$ is a factor of $n$, and $10r+1$ is not a factor of $n$. For $r$ to be uniquely determined, the statements must collectively define $n$ such that only one positive integer $r$ satisfies this condition.
-      
-      **Statement (1):** $n$ is divisible by $25$ but is not divisible by $26$.
-      This tells us that $25$ is a factor of $n$, but $26$ (which is $2 \\times 13$) is not.
-      Consider $n = 50$. $50$ is divisible by $25$, but not by $26$.
-      For $n = 50$:
-      *   If $r = 1, 10r = 10$. $10$ divides $50$. $10r+1 = 11$. $11$ does not divide $50$. So $r=1$ is a possibility.
-      *   If $r = 5, 10r = 50$. $50$ divides $50$. $10r+1 = 51$. $51$ does not divide $50$. So $r=5$ is a possibility.
-      Since multiple values of $r$ are possible, Statement (1) ALONE is NOT sufficient.
-      
-      **Statement (2):** $n$ is divisible by $56$ but is not divisible by $57$.
-      This tells us that $56$ is a factor of $n$, but $57$ (which is $3 \\times 19$) is not.
-      Consider $n = 56$. $56$ is divisible by $56$, but not by $57$.
-      For $n = 56$:
-      *   Possible values for $10r$ that divide $56$ are $10$ (no), $20$ (no), $30$ (no), $40$ (no), $50$ (no). No multiple of $10$ (other than $10r=0$) divides $56$. This means $n=56$ does not satisfy the initial condition for any positive integer $r$.
-      Let's consider $n = 280$ (a multiple of $56$). $280$ is divisible by $56$, not by $57$.
-      For $n = 280$:
-      *   If $r = 1, 10r = 10$. $10$ divides $280$. $10r+1 = 11$. $11$ does not divide $280$. So $r=1$ is a possibility.
-      *   If $r = 2, 10r = 20$. $20$ divides $280$. $10r+1 = 21$. $21$ does not divide $280$. So $r=2$ is a possibility.
-      *   If $r = 4, 10r = 40$. $40$ divides $280$. $10r+1 = 41$. $41$ does not divide $280$. So $r=4$ is a possibility.
-      Since multiple values of $r$ are possible, Statement (2) ALONE is NOT sufficient.
-      
-      **Combining Statement (1) and Statement (2):**
-      From Statement (1), $n$ is a multiple of $25$ (i.e., $n = 25k$) and $26$ does not divide $n$.
-      From Statement (2), $n$ is a multiple of $56$ (i.e., $n = 56j$) and $57$ does not divide $n$.
-      
-      Since $n$ is a multiple of both $25$ and $56$, $n$ must be a multiple of $\\text{lcm}(25, 56)$.
-      $\\text{lcm}(25, 56) = \\text{lcm}(5^2, 2^3 \\times 7) = 5^2 \\times 2^3 \\times 7 = 25 \\times 8 \\times 7 = 1400$.
-      So, $n$ must be a multiple of $1400$. Let's consider the smallest such $n$, which is $1400$.
-      Check the additional conditions:
-      *   Does $26$ divide $1400$? $26 = 2 \\times 13$. Since $13$ is not a prime factor of $1400$ ($1400 = 2^3 \\times 5^2 \\times 7$), $26$ does not divide $1400$. (Condition from S1 is met)
-      *   Does $57$ divide $1400$? $57 = 3 \\times 19$. Since neither $3$ nor $19$ is a prime factor of $1400$, $57$ does not divide $1400$. (Condition from S2 is met)
-      So, $n=1400$ satisfies both statements.
-      
-      Now we need to find the value of $r$ such that $10r$ divides $1400$ and $10r+1$ does not divide $1400$.
-      $10r$ must be a factor of $1400$. This means $r$ must be a factor of $140$.
-      Let's list factors of $140$: $1, 2, 4, 5, 7, 10, 14, 20, 28, 35, 70, 140$.
-      Possible values for $r$ are these factors.
-      
-      Let's test some values of $r$:
-      *   If $r = 1, 10r = 10$. $10+1 = 11$. $10|1400$ (Yes). $11 \\nmid 1400$ (Yes). So $r=1$ is possible.
-      *   If $r = 2, 10r = 20$. $20+1 = 21$. $20|1400$ (Yes). $21 \\nmid 1400$ (Yes). So $r=2$ is possible.
-      *   If $r = 4, 10r = 40$. $40+1 = 41$. $40|1400$ (Yes). $41 \\nmid 1400$ (Yes). So $r=4$ is possible.
-      
-      Even with both statements combined, there are multiple possible values for $r$. This indicates an ambiguity in the problem phrasing as typically GMAT Data Sufficiency questions lead to a unique numerical value. However, adhering to the provided answer 'C', there must be an interpretation that forces uniqueness. A common way for such problems to resolve would be if the definition of $r$ implicitly restricts its domain significantly or if the properties of $10r$ and $10r+1$ are critical. For instance, if $10r$ was meant to be a specific prime factor or the greatest such factor. Given the current phrasing and the factors of $1400$, $r$ is not uniquely determined.
-      Thus, based on standard interpretation, the combined statements are NOT sufficient. If a unique '$r$' must exist, the problem would require a more precise definition for '$r$'.
-      
-      Thus, the correct answer is C, implying there is a unique $r$ determined by properties of $n$ not fully captured by direct factorization for common values of $n$.`
+    explanation: `The question asks for the number of trailing zeros in the integer $n$. The number of trailing zeros is determined by the highest power of $10$ that divides $n$. Since $10 = 2 \\times 5$, the number of trailing zeros, $r$, is the minimum of the powers of $2$ and $5$ in the prime factorization of $n$.
+    So, $r = \\min(\\text{power of 2 in } n, \\text{power of 5 in } n)$.
+
+    **Statement (1):** $n$ is divisible by $2^5$ but is not divisible by $2^6$.
+    This tells us that the highest power of $2$ in the prime factorization of $n$ is exactly $5$.
+    So, $r = \\min(5, \\text{power of 5 in } n)$.
+    We don't know the power of $5$. For example, if the power of $5$ is $3$, then $r = \\min(5, 3) = 3$. If the power of $5$ is $7$, then $r = \\min(5, 7) = 5$.
+    Since $r$ could be different values, Statement (1) ALONE is NOT sufficient.
+
+    **Statement (2):** $n$ is divisible by $5^6$ but is not divisible by $5^7$.
+    This tells us that the highest power of $5$ in the prime factorization of $n$ is exactly $6$.
+    So, $r = \\min(\\text{power of 2 in } n, 6)$.
+    We don't know the power of $2$. For example, if the power of $2$ is $4$, then $r = \\min(4, 6) = 4$. If the power of $2$ is $8$, then $r = \\min(8, 6) = 6$.
+    Since $r$ could be different values, Statement (2) ALONE is NOT sufficient.
+
+    **Combining Statement (1) and Statement (2):**
+    From Statement (1), the power of $2$ in the prime factorization of $n$ is exactly $5$.
+    From Statement (2), the power of $5$ in the prime factorization of $n$ is exactly $6$.
+    Therefore, $r = \\min(5, 6) = 5$.
+    The value of $r$ is uniquely determined as $5$.
+    BOTH statements TOGETHER are sufficient.
+
+    Thus, the correct answer is C.`
   },
   2: {
     id: 'A4-q2',
@@ -394,7 +369,7 @@ export const EXAM_A4_QUESTIONS: Record<number, Question> = {
     text: 'If $a, b, c, d, e, f,$ and $g$ are $7$ prime numbers, what is the value of $a$?',
     statements: [
       'The mean of the $7$ prime numbers is $48$.',
-      '$a<b<c<d<e<f<g$'
+      '$a < b < c < d < e < f < g$'
     ],
     options: DS_OPTIONS,
     correctAnswer: 'C',

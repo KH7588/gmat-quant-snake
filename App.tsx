@@ -6,15 +6,15 @@ import { Footer } from './components/Footer.tsx';
 import { SummaryScreen } from './components/SummaryScreen.tsx';
 import { InstructionScreen } from './components/InstructionScreen.tsx';
 import { ConfirmationModal } from './components/ConfirmationModal.tsx';
-import { Question, AppState, AppMode, UserResponse } from './types';
-import { APP_CONFIG } from './data/config';
-import { getExamStatus, ExamStatus } from './data/schedule';
+import { Question, AppState, AppMode, UserResponse } from './types.ts';
+import { APP_CONFIG } from './data/config.ts';
+import { getExamStatus, ExamStatus } from './data/schedule.ts';
 import { loadExamQuestions } from './data/examLoaders.ts';
 
 // --- DEVELOPMENT MODE ---
 // Set this to 'A1', 'A2', etc. to force that exam to display, ignoring the schedule.
-// Set to null for production schedule mode.
-const DEV_MODE_EXAM_ID = 'A1';
+// This is overridden by the URL parameter `?exam=...` if it exists.
+const DEV_MODE_EXAM_ID = 'A2';
 
 export default function App() {
   const [appState, setAppState] = useState<AppState>(AppState.LOADING);
@@ -80,13 +80,19 @@ export default function App() {
   useEffect(() => {
     let status = getExamStatus();
 
-    // FORCE OVERRIDE IN DEV MODE
-    if (DEV_MODE_EXAM_ID) {
+    // --- DEVELOPMENT OVERRIDE ---
+    // Allows forcing a specific exam via URL parameter (e.g., ?exam=A1) or a hardcoded value.
+    // URL parameter takes precedence.
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlExamId = urlParams.get('exam');
+    const devExamId = urlExamId || DEV_MODE_EXAM_ID;
+
+    if (devExamId) {
       status = {
         isOpen: true,
-        examId: DEV_MODE_EXAM_ID,
+        examId: devExamId.toUpperCase(),
         message: "DEV MODE",
-        title: `GMAT Quant Snake ${DEV_MODE_EXAM_ID}`
+        title: `GMAT Quant Snake ${devExamId.toUpperCase()}`
       };
     }
 
@@ -98,8 +104,8 @@ export default function App() {
        // If no dev mode and no open exam, default to instruction screen but effectively locked
        setAppState(AppState.READY); 
        setMode(AppMode.EXAM); // Set to exam mode, but the render logic for locked state will handle it
-       if (!DEV_MODE_EXAM_ID && !status.isOpen) {
-       } else if (!DEV_MODE_EXAM_ID && status.isOpen) {
+       if (!devExamId && !status.isOpen) {
+       } else if (!devExamId && status.isOpen) {
          console.warn("No exam specified in DEV_MODE_EXAM_ID and no active scheduled exam. Showing empty screen.");
        }
     }
@@ -122,7 +128,7 @@ export default function App() {
       mode === AppMode.INSTRUCTION ||
       isPracticeMode || 
       isTimerPaused ||
-      (!examStatus?.isOpen && !DEV_MODE_EXAM_ID)
+      (!examStatus?.isOpen && !DEV_MODE_EXAM_ID && !new URLSearchParams(window.location.search).get('exam'))
     ) {
       if (timerRef.current) {
         clearInterval(timerRef.current);
@@ -323,7 +329,7 @@ export default function App() {
   };
 
   // --- RENDER: LOCKED / CLOSED STATE (or no DEV_MODE_EXAM_ID and no open scheduled exam) ---
-  if (!DEV_MODE_EXAM_ID && appState === AppState.READY && (!examStatus?.isOpen)) {
+  if (appState === AppState.READY && (!examStatus?.isOpen)) {
     return (
       <div className="h-screen w-full flex flex-col items-center justify-center bg-gray-100 font-sans p-8">
         <div className="bg-white p-10 rounded-lg shadow-xl text-center max-w-md w-full">
