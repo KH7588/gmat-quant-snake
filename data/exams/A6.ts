@@ -1,5 +1,5 @@
-import { Question, Option } from '../../types.ts';
-import { DS_OPTIONS } from '../questions.ts';
+import { Question, Option } from '../../types';
+import { DS_OPTIONS } from '../questions';
 
 export const EXAM_A6_QUESTIONS: Record<number, Question> = {
   1: {
@@ -206,13 +206,13 @@ Since EACH statement ALONE is sufficient, the correct answer is D.`
         {label: "E", text: "$\\frac{p}{ab(1+x+r)}$"}
     ],
     correctAnswer: 'C',
-    explanation: `Let C be the pre-tax price per unit area.
+    explanation: `Let \\$C be the pre-tax price per unit area.
 1.  Area of the room = $a \\times b$.
 2.  Additional area purchased = $x$ percent of room's area = $ab \\times \\frac{x}{100}$.
 3.  Total area of carpeting purchased = $ab + ab \\frac{x}{100} = ab(1 + \\frac{x}{100})$.
 4.  Total pre-tax price = (Price per unit area) × (Total area purchased) = $C \\times ab(1 + \\frac{x}{100})$.
 5.  Final total price (p) = (Total pre-tax price) × (1 + tax rate) = $C \\times ab(1 + \\frac{x}{100}) \\times (1 + \\frac{r}{100})$.
-6.  Now, solve for C:
+6.  Now, solve for $C:
     $C = \\frac{p}{ab(1 + \\frac{x}{100})(1 + \\frac{r}{100})}$.
 
 This matches option C. Note that option D is an algebraic equivalent:
@@ -373,9 +373,10 @@ C(10, 3) = 10! / (3!(10-3)!)
 C(10, 3) = 10! / (3!7!)
 C(10, 3) = (10 × 9 × 8 × 7!) / ((3 × 2 × 1) × 7!)
 C(10, 3) = (10 × 9 × 8) / (3 × 2 × 1)
-C(10, 3) = 10 × 3 × 4 = 120
-Therefore, 120 different triangles can be formed.
+C(10, 3) = 10 × 3 × 4 = 120.
 
-Thus, the correct answer is C.`
+Thus, there are 120 different triangles that can be formed.
+
+The correct answer is C.`
   }
 };
