@@ -248,8 +248,8 @@ $(y - 5)(y + 4) = 0$
 This gives two possible values for y: $y = 5$ or $y = -4$.
 
 We are given the condition $x > y$. Let's check both cases:
-- Case 1: If $y = 5$. Then $x = 7 - y = 7 - 5 = 2$. Is $x > y$? Is $2 > 5$? No, this is false. So we discard this solution.
-- Case 2: If $y = -4$. Then $x = 7 - y = 7 - (-4) = 11$. Is $x > y$? Is $11 > -4$? Yes, this is true. This is our valid solution.
+- Case 1: If $y = 5$. Then $x = 7 - y = 7 - 5 = 2$. Is $x > y$? Is \\$2 > 5$? No, this is false. So we discard this solution.
+- Case 2: If $y = -4$. Then $x = 7 - y = 7 - (-4) = 11$. Is $x > y$? Is \\$11 > -4$? Yes, this is true. This is our valid solution.
 
 So we have $x = 11$ and $y = -4$.
 The question asks for the value of $x^2 + y$.
@@ -304,15 +304,15 @@ Thus, the correct answer is C.`
     ],
     correctAnswer: 'C',
     explanation: `The value of k is the product of {7, 14, 21, ..., 245}.
-The last multiple of 7 less than or equal to 250 is $7 \\times 35 = 245$.
-So, k = $7 \\times 14 \\times 21 \\times ... \\times 245$.
+The last multiple of 7 less than or equal to 250 is \\$7 \\times 35 = 245$.
+So, k = \\$7 \\times 14 \\times 21 \\times ... \\times 245$.
 We can factor out a 7 from each term:
 k = $(7 \\cdot 1) \\times (7 \\cdot 2) \\times (7 \\cdot 3) \\times ... \\times (7 \\cdot 35)$.
-There are 35 such terms. So we have $7^{35}$ multiplied by the product of the integers from 1 to 35.
-k = $7^{35} \\times (1 \\cdot 2 \\cdot 3 \\cdot ... \\cdot 35) = 7^{35} \\times 35!$.
+There are 35 such terms. So we have \\$7^{35}$ multiplied by the product of the integers from 1 to 35.
+k = \\$7^{35} \\times (1 \\cdot 2 \\cdot 3 \\cdot ... \\cdot 35) = 7^{35} \\times 35!$.
 
-The value of n is the number of trailing zeros in k. The number of trailing zeros is determined by the number of factors of 10. Since $10 = 2 \\times 5$, we need to count the factors of 2 and 5. The smaller of these two counts will be n.
-The term $7^{35}$ contributes no factors of 2 or 5. We only need to count the factors of 5 in 35!.
+The value of n is the number of trailing zeros in k. The number of trailing zeros is determined by the number of factors of 10. Since \\$10 = 2 \\times 5$, we need to count the factors of 2 and 5. The smaller of these two counts will be n.
+The term \\$7^{35}$ contributes no factors of 2 or 5. We only need to count the factors of 5 in 35!.
 Number of factors of 5 in 35! = $\\lfloor\\frac{35}{5}\\rfloor + \\lfloor\\frac{35}{25}\\rfloor = 7 + 1 = 8$.
 The number of factors of 2 is much larger, so the number of factors of 5 is the limiting factor.
 There are 8 factors of 5, so we can form 8 pairs of (2x5), meaning there will be 8 trailing zeros.

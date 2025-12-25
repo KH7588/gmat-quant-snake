@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../data/questions.ts"],
+  "sourcesContent": ["import { Option } from '../types.ts';\r\n\r\n// Standard Data Sufficiency Options\r\nexport const DS_OPTIONS: Option[] = [\r\n  { label: \"A\", text: \"Statement (1) ALONE is sufficient, but statement (2) alone is not sufficient.\" },\r\n  { label: \"B\", text: \"Statement (2) ALONE is sufficient, but statement (1) alone is not sufficient.\" },\r\n  { label: \"C\", text: \"BOTH statements TOGETHER are sufficient, but NEITHER statement ALONE is sufficient.\" },\r\n  { label: \"D\", text: \"EACH statement ALONE is sufficient.\" },\r\n  { label: \"E\", text: \"Statements (1) and (2) TOGETHER are NOT sufficient.\" }\r\n];\r\n\r\n// QUESTION_BANK has been removed. Individual exam questions will be dynamically loaded\r\n// from `data/exams/` based on the exam ID via `data/examLoaders.ts`.\r\n// PS_ROMAN_NUMERALS_OPTIONS was moved to A1.ts as it was only used there and should not be global."],
+  "mappings": "AAGO,IAAMA,EAAuB,CAClC,CAAE,MAAO,IAAK,KAAM,+EAAgF,EACpG,CAAE,MAAO,IAAK,KAAM,+EAAgF,EACpG,CAAE,MAAO,IAAK,KAAM,qFAAsF,EAC1G,CAAE,MAAO,IAAK,KAAM,qCAAsC,EAC1D,CAAE,MAAO,IAAK,KAAM,qDAAsD,CAC5E",
+  "names": ["DS_OPTIONS"]
+}

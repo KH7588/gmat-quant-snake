@@ -86,8 +86,8 @@ export const EXAM_A2_QUESTIONS: Record<number, Question> = {
     id: 'A2-q3',
     text: 'If the symbol $\\triangle$ can represent addition, subtraction, multiplication, or division, which operation does it represent?',
     statements: [
-      '$2^{4\\triangle2}=4^{1\\triangle1}$',
-      '$2^{4\\triangle2} = (4\\triangle2)^2$'
+      '$2^{4\\\\triangle2}=4^{1\\\\triangle1}$',
+      '$2^{4\\\\triangle2} = (4\\\\triangle2)^2$'
     ],
     options: DS_OPTIONS,
     correctAnswer: 'A',
@@ -111,6 +111,7 @@ export const EXAM_A2_QUESTIONS: Record<number, Question> = {
   },
   4: {
     id: 'A2-q4',
+    // FIX: Changed \\' to \' to correctly escape the apostrophe in the string.
     text: 'A person\'s new daily wage is $125\\%$ greater than his former daily wage. If he works $10\\%$ fewer hours per day, by what percentage does his new hourly wage exceed his former hourly wage?',
     options: [
       { label: "A", text: "125%" },

@@ -55,13 +55,13 @@ Thus, the correct answer is E.`
     -   Number of ways to choose 1 Spaniard from 5: $^5C_1 = 5$
     -   Number of ways to choose 1 German from 4: $^4C_1 = 4$
     -   Number of ways to choose 1 Frenchman from 3: $^3C_1 = 3$
-    The total number of combinations of 3 people (one from each country) is $5 \\times 4 \\times 3 = 60$.
+    The total number of combinations of 3 people (one from each country) is \\$5 \\times 4 \\times 3 = 60$.
 
 2.  **Arrangement (Permutation):** If the roles within the team are distinct (e.g., team captain, navigator, etc.), or if the order of selection creates a distinct team, we must arrange the 3 chosen people.
-    -   Number of ways to arrange 3 people: $3! = 3 \\times 2 \\times 1 = 6$.
+    -   Number of ways to arrange 3 people: \\$3! = 3 \\times 2 \\times 1 = 6$.
 
 Total number of distinct teams = (Number of combinations) $\\times$ (Number of arrangements)
-Total = $60 \\times 6 = 360$.
+Total = \\$60 \\times 6 = 360$.
 
 Thus, there are 360 distinct teams that can be formed.`
   },
@@ -83,7 +83,7 @@ Thus, there are 360 distinct teams that can be formed.`
     correctAnswer: 'A',
     explanation: `Let the set of five positive integers be $\{a, b, c, d, e\}$ arranged in ascending order, so $a \le b \le c \le d \le e$.
 
-1.  **Mean is 10:** The sum of the five integers is $5 \\times 10 = 50$.
+1.  **Mean is 10:** The sum of the five integers is \\$5 \\times 10 = 50$.
     $a + b + c + d + e = 50$.
 
 2.  **Median is 12:** The middle number is 12, so $c = 12$.
@@ -144,8 +144,8 @@ Total employees in the company = 24 (Group A) + 24 (Group B) = 48.
     Women in Group A = $(7/12) \\times 24 = 14$.
 
 3.  **Calculate men and women in Group B:**
-    Men in Group B = Total men - Men in Group A = $18 - 10 = 8$.
-    Women in Group B = Total women - Women in Group A = $30 - 14 = 16$.
+    Men in Group B = Total men - Men in Group A = \\$18 - 10 = 8$.
+    Women in Group B = Total women - Women in Group A = \\$30 - 14 = 16$.
 
 4.  **Find the ratio of men to women in Group B:**
     Ratio = Men in Group B : Women in Group B = 8 : 16.
@@ -258,10 +258,10 @@ Let W be the amount of work for one job. We can set W = 1 job.
     explanation: `We are given two scenarios based on the formula Distance = Speed $\\times$ Time.
 
 1.  **Person A:**
-    $80 = x(y-3)$  (Equation 1)
+    \\$80 = x(y-3)$  (Equation 1)
 
 2.  **Person B:**
-    $80 = (x-4)(y-2)$ (Equation 2)
+    \\$80 = (x-4)(y-2)$ (Equation 2)
 
 We need to find the ratio of A's speed to B's speed, which is $\\frac{x}{x-4}$.
 
@@ -273,10 +273,10 @@ $-x = -4y + 8$
 $x = 4y - 8$
 
 Now substitute this expression for $x$ back into Equation 1:
-$80 = (4y-8)(y-3)$
-$80 = 4(y-2)(y-3)$
-$20 = (y-2)(y-3)$
-$20 = y^2 - 5y + 6$
+\\$80 = (4y-8)(y-3)$
+\\$80 = 4(y-2)(y-3)$
+\\$20 = (y-2)(y-3)$
+\\$20 = y^2 - 5y + 6$
 $y^2 - 5y - 14 = 0$
 
 Factor the quadratic equation:
@@ -289,7 +289,7 @@ $x = 4y - 8 = 4(7) - 8 = 28 - 8 = 20$.
 A's speed is $x = 20$ mph.
 B's speed is $x-4 = 20-4 = 16$ mph.
 
-The ratio of A's speed to B's speed is $20:16$, which simplifies to $5:4$.
+The ratio of A's speed to B's speed is \\$20:16$, which simplifies to \\$5:4$.
 
 Thus, the correct answer is D.`
   },
@@ -318,7 +318,7 @@ $P(C \\cup K) = 1 - \\frac{1}{6} = \\frac{5}{6}$
 
 This means 5/6 of the total shipment had at least one defect.
 The fraction of pieces with NEITHER defect is the remainder:
-Fraction Neither = $1 - P(C \\cup K) = 1 - \\frac{5}{6} = \\frac{1}{6}$.
+Fraction Neither = \\$1 - P(C \\cup K) = 1 - \\frac{5}{6} = \\frac{1}{6}$.
 
 We are given that 150 pieces were neither chipped nor cracked.
 So, $(\\frac{1}{6}) \\times T = 150$.
@@ -343,21 +343,21 @@ Thus, the correct answer is E.`
 
 The principle of mixtures states that the total amount of solute (salt) in the initial solutions must equal the total amount of solute in the final mixture.
 
-1.  **Salt from the 10% solution:** $0.10 \\times x$
-2.  **Salt from the 15% solution:** $0.15 \\times 300 = 45$ tons.
+1.  **Salt from the 10% solution:** \\$0.10 \\times x$
+2.  **Salt from the 15% solution:** \\$0.15 \\times 300 = 45$ tons.
 3.  **Total solution weight after mixing:** $x + 300$ tons.
-4.  **Total salt in the final 12% solution:** $0.12 \\times (x + 300)$
+4.  **Total salt in the final 12% solution:** \\$0.12 \\times (x + 300)$
 
 Now, set up the equation:
 (Salt from 10% solution) + (Salt from 15% solution) = (Salt in final solution)
-$0.10x + 45 = 0.12(x + 300)$
-$0.10x + 45 = 0.12x + 36$
+\\$0.10x + 45 = 0.12(x + 300)$
+\\$0.10x + 45 = 0.12x + 36$
 
-Subtract $0.10x$ from both sides:
-$45 = 0.02x + 36$
+Subtract \\$0.10x$ from both sides:
+\\$45 = 0.02x + 36$
 
 Subtract 36 from both sides:
-$9 = 0.02x$
+\\$9 = 0.02x$
 
 Solve for x:
 $x = \\frac{9}{0.02} = \\frac{9}{2/100} = 9 \\times 50 = 450$.
@@ -418,13 +418,13 @@ Thus, the correct answer is C.`
     -   Total distance = 5 km.
     -   Rate = \\$0.90 per 0.2 km.
     -   First, find the number of 0.2 km units in the trip: $\\frac{5 \\text{ km}}{0.2 \\text{ km}} = 25$ units.
-    -   Total distance charge = (Number of units) $\\times$ (Rate per unit) = $25 \\times \\$0.90 = \\$22.50$.
+    -   Total distance charge = (Number of units) $\\times$ (Rate per unit) = \\$25 \\times \\$0.90 = \\$22.50$.
 
 3.  **Waiting Charge:**
     -   Total trip time = 20 minutes.
-    -   Time spent stopped = 30% of total time = $0.30 \\times 20$ minutes = 6 minutes.
+    -   Time spent stopped = 30% of total time = \\$0.30 \\times 20$ minutes = 6 minutes.
     -   Rate = \\$0.60 per minute.
-    -   Total waiting charge = (Minutes stopped) $\\times$ (Rate per minute) = $6 \\times \\$0.60 = \\$3.60$.
+    -   Total waiting charge = (Minutes stopped) $\\times$ (Rate per minute) = \\$6 \\times \\$0.60 = \\$3.60$.
 
 4.  **Total Fare:**
     Total Fare = Base Charge + Distance Charge + Waiting Charge
