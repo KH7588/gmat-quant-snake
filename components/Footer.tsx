@@ -25,9 +25,6 @@ export const Footer: React.FC<FooterProps> = ({
   return (
     <div className="bg-[#4299e1] text-white h-[25px] flex items-center justify-between px-4 text-sm fixed bottom-0 w-full z-20">
       <div className="flex items-center space-x-6 h-full">
-        {/* Version Number for deployment verification */}
-        <span className="text-xs text-blue-200 font-mono select-none">v1.3.1</span>
-        
         {/* Exit Button */}
         <button 
           onClick={onExit}
@@ -44,7 +41,7 @@ export const Footer: React.FC<FooterProps> = ({
             className="flex items-center space-x-1 px-2 h-full rounded transition hover:bg-blue-600 cursor-pointer"
           >
             {isTimerPaused ? <Play size={12} fill="currentColor" /> : <Pause size={12} />}
-            <span className="leading-none font-semibold">{isTimerPaused ? 'Resume' : 'Resume'}</span>
+            <span className="leading-none font-semibold">{isTimerPaused ? 'Resume' : 'Pause'}</span>
           </button>
         )}
       </div>

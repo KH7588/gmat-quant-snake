@@ -1,4 +1,4 @@
-import { Option } from '../types';
+import { Option } from '../types.ts';
 
 // Standard Data Sufficiency Options
 export const DS_OPTIONS: Option[] = [

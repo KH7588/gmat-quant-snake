@@ -157,11 +157,15 @@ export const EXAM_A1_QUESTIONS: Record<number, Question> = {
       Substitute $P(T) = 1 - P(H)$:
       $P(H) \\times (1 - P(H)) = \\frac{1}{9}$.
       $P(H) - P(H)^2 = \\frac{1}{9}$.
+      Multiply by $9$: $9P(H) - 9P(H)^2 = 1$.
       Rearrange into a quadratic equation: $9P(H)^2 - 9P(H) + 1 = 0$.
-      Using the quadratic formula, $P(H) = \\frac{-(-9) \\pm \\sqrt{(-9)^2 - 4(9)(1)}}{2(9)} = \\frac{9 \pm \\sqrt{81 - 36}}{18} = \\frac{9 \pm \\sqrt{45}}{18}$.
-      This gives two possible values for $P(H)$.
-      Since there are two possible values for $P(H)$, there will be two possible values for $P(H)^2$.
-      Statement (2) ALONE is NOT sufficient.
+      This quadratic equation does not factor easily with integers. Using the quadratic formula:
+      $P(H) = \\frac{-(-9) \\pm \\sqrt{(-9)^2 - 4(9)(1)}}{2(9)} = \\frac{9 \\pm \\sqrt{81 - 36}}{18} = \\frac{9 \\pm \\sqrt{45}}{18}$.
+      This gives two possible values for $P(H)$:
+      $P(H) = \\frac{9 + \\sqrt{45}}{18}$ and $P(H) = \\frac{9 - \\sqrt{45}}{18}$.
+
+      Since there are two possible values for $P(H)$, there are two possible values for the required probability $P(H)^2$.
+      Therefore, Statement (2) ALONE is NOT sufficient.
 
       Thus, the correct answer is A.`
   },

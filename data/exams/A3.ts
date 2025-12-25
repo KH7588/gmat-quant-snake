@@ -1,5 +1,5 @@
 import { Question, Option } from '../../types';
-import { DS_OPTIONS } from '../questions'; // Assuming DS_OPTIONS is now exported separately
+import { DS_OPTIONS } from '../questions';
 
 // Standard Problem Solving Numerical Options
 const PS_NUMERICAL_OPTIONS: Option[] = [
@@ -224,7 +224,7 @@ export const EXAM_A3_QUESTIONS: Record<number, Question> = {
   },
   6: {
     id: 'A3-q6',
-    text: 'A certain worker is paid at a rate of $52.50$ per hour for the first $8$ hours of work in a day. For any hours worked in excess of $8$ hours in a day, the worker is paid at a rate of $65.00$ per hour. How many hours did the worker work yesterday?',
+    text: 'A certain worker is paid at a rate of \\$52.50 per hour for the first $8$ hours of work in a day. For any hours worked in excess of $8$ hours in a day, the worker is paid at a rate of $65.00$ per hour. How many hours did the worker work yesterday?',
     statements: [
       'If the worker had worked $4$ more hours yesterday, the worker\'s total earnings for the day would have increased by $260$.',
       'The worker\'s total earnings for yesterday were $550$.'
@@ -233,8 +233,8 @@ export const EXAM_A3_QUESTIONS: Record<number, Question> = {
     correctAnswer: 'B',
     explanation: `Let $H$ be the total number of hours the worker worked yesterday.
       The pay structure is:
-      *   First $8$ hours: $52.50/\\text{hour}$
-      *   Hours in excess of $8$: $65.00/\\text{hour}$
+      *   First $8$ hours: \\$52.50/\\text{hour}$
+      *   Hours in excess of $8$: \\$65.00/\\text{hour}$
       
       We need to find $H$.
       
@@ -243,9 +243,9 @@ export const EXAM_A3_QUESTIONS: Record<number, Question> = {
       If the worker worked $H+4$ hours, earnings would be $E + 260$.
       The increase in earnings is $260$ for $4$ additional hours.
       So, the average rate for those $4$ additional hours is $\\frac{260}{4} = 65.00$ per hour.
-      This means that all $4$ of these additional hours were paid at the overtime rate ($65.00/\\text{hour}$).
+      This means that all $4$ of these additional hours were paid at the overtime rate (\\$65.00/\\text{hour}$).
       For this to be true, the worker must have worked at least $8$ hours yesterday ($H \\ge 8$). If $H$ were less than $8$, say $H=7$, then the first additional hour would be paid at $52.50$.
-      Since the rate is $65.00/\\text{hour}$ for the additional $4$ hours, $H$ must be $\\ge 8$.
+      Since the rate is \\$65.00/\\text{hour}$ for the additional $4$ hours, $H$ must be $\\ge 8$.
       Let's consider two cases for the actual $H$ hours worked:
       *   Case 1: $H = 8$ hours. Earnings = $8 \\times 52.50 = 420$. If worked $4$ more (total $12$ hours), earnings = $8\\times 52.50 + 4\\times 65.00 = 420 + 260 = 680$. Increase = $260$. So $H=8$ is a possibility.
       *   Case 2: $H = 10$ hours. Earnings = $8 \\times 52.50 + 2 \\times 65.00 = 420 + 130 = 550$. If worked $4$ more (total $14$ hours), earnings = $8\\times 52.50 + 6\\times 65.00 = 420 + 390 = 810$. Increase = $260$. So $H=10$ is a possibility.

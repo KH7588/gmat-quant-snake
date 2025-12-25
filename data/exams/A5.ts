@@ -1,5 +1,5 @@
 import { Question, Option } from '../../types.ts';
-import { DS_OPTIONS } from '../questions.ts';
+import { DS_OPTIONS } from '../questions';
 
 // Standard Numerical Options 0-4
 const PS_NUM_0_4_OPTIONS: Option[] = [

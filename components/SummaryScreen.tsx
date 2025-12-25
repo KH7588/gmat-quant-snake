@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserResponse } from '../types';
+import { UserResponse } from '../types.ts';
 import { Flag, ListRestart } from 'lucide-react';
 
 interface SummaryScreenProps {
@@ -10,7 +10,7 @@ interface SummaryScreenProps {
 }
 
 export const SummaryScreen: React.FC<SummaryScreenProps> = ({ responses, onReviewAll, onReviewFlagged, isPracticeMode }) => {
-  
+
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
@@ -24,7 +24,13 @@ export const SummaryScreen: React.FC<SummaryScreenProps> = ({ responses, onRevie
         
         {/* Changed max-w-4xl mx-auto to w-full to match Question page width */}
         <div className="w-full border border-gray-300 rounded-sm overflow-hidden">
-          <table className="w-full text-sm font-verdana text-left">
+          <table className="w-full text-sm font-verdana text-left table-fixed">
+             <colgroup>
+                <col className="w-[80px]" /> {/* Q # */}
+                <col className="w-[120px]" /> {/* Your Answer */}
+                <col className="w-[120px]" /> {/* Correct Answer */}
+                {!isPracticeMode && <col className="w-[100px]" />} {/* Time Taken */}
+            </colgroup>
             <thead className="bg-gray-100 border-b border-gray-300">
               <tr>
                 <th className="py-3 px-6 font-semibold text-gray-700">Q #</th>
@@ -37,23 +43,25 @@ export const SummaryScreen: React.FC<SummaryScreenProps> = ({ responses, onRevie
             </thead>
             <tbody className="divide-y divide-gray-200">
               {responses.map((response) => (
-                <tr key={response.questionNumber} className="hover:bg-gray-50">
-                  <td className="py-3 px-6 text-gray-800 font-medium">
-                    {response.questionNumber}
-                    {response.isFlagged && <Flag size={12} className="inline ml-2 text-red-500 fill-current" />}
-                  </td>
-                  <td className={`py-3 px-6 font-bold ${response.isCorrect ? 'text-green-600' : (response.selectedOption ? 'text-red-600' : 'text-gray-400')}`}>
-                    {response.selectedOption || "Skipped"}
-                  </td>
-                  <td className="py-3 px-6 text-gray-800">
-                    {response.correctAnswer}
-                  </td>
-                  {!isPracticeMode && (
-                    <td className="py-3 px-6 text-gray-600 font-mono">
-                      {response.timeSpent > 0 ? formatTime(response.timeSpent) : "－"}
+                <React.Fragment key={response.questionNumber}>
+                  <tr className="hover:bg-gray-50">
+                    <td className="py-3 px-6 text-gray-800 font-medium">
+                      {response.questionNumber}
+                      {response.isFlagged && <Flag size={12} className="inline ml-2 text-red-500 fill-current" />}
                     </td>
-                  )}
-                </tr>
+                    <td className={`py-3 px-6 font-bold ${response.isCorrect ? 'text-green-600' : (response.selectedOption ? 'text-red-600' : 'text-gray-400')}`}>
+                      {response.selectedOption || "Skipped"}
+                    </td>
+                    <td className="py-3 px-6 text-gray-800">
+                      {response.correctAnswer}
+                    </td>
+                    {!isPracticeMode && (
+                      <td className="py-3 px-6 text-gray-600 font-mono">
+                        {response.timeSpent > 0 ? formatTime(response.timeSpent) : "－"}
+                      </td>
+                    )}
+                  </tr>
+                </React.Fragment>
               ))}
             </tbody>
           </table>

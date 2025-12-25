@@ -1,6 +1,8 @@
+
+
 export const APP_CONFIG = {
   // The title displayed in the top header
-  title: "GMAT Quant Snake A1",
+  title: "GMAT Quant Snake",
   
   // The total number of questions in this exam set
   totalQuestions: 12,

@@ -37,9 +37,33 @@ export const loadExamQuestions = async (examId: string): Promise<Record<number, 
         const module = await import('./exams/A5.ts');
         return module.EXAM_A5_QUESTIONS;
       }
+      case 'A6': {
+        const module = await import('./exams/A6.ts');
+        return module.EXAM_A6_QUESTIONS;
+      }
+      case 'A7': {
+        const module = await import('./exams/A7.ts');
+        return module.EXAM_A7_QUESTIONS;
+      }
       case 'B1': {
         const module = await import('./exams/B1.ts');
         return module.EXAM_B1_QUESTIONS;
+      }
+      case 'C1': {
+        const module = await import('./exams/C1.ts');
+        return module.EXAM_C1_QUESTIONS;
+      }
+      case 'C2': {
+        const module = await import('./exams/C2.ts');
+        return module.EXAM_C2_QUESTIONS;
+      }
+      case 'C3': {
+        const module = await import('./exams/C3.ts');
+        return module.EXAM_C3_QUESTIONS;
+      }
+      case 'C4': {
+        const module = await import('./exams/C4.ts');
+        return module.EXAM_C4_QUESTIONS;
       }
       default:
         console.error(`No module loader found for exam ID: ${sanitizedExamId}. Please ensure it's added to the switch statement in examLoaders.ts.`);

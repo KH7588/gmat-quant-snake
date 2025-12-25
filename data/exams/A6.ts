@@ -74,7 +74,7 @@ Thus, the correct answer is C.`
     id: 'A6-q3',
     text: 'Is the arithmetic mean of the five numbers a, b, c, d, and e greater than the median of these five numbers?',
     statements: [
-      'a<b<c<d<e',
+      'a < b < c < d < e',
       'b-a=e-d'
     ],
     options: DS_OPTIONS,
@@ -210,10 +210,10 @@ Since EACH statement ALONE is sufficient, the correct answer is D.`
 1.  Area of the room = $a \\times b$.
 2.  Additional area purchased = $x$ percent of room's area = $ab \\times \\frac{x}{100}$.
 3.  Total area of carpeting purchased = $ab + ab \\frac{x}{100} = ab(1 + \\frac{x}{100})$.
-4.  Total pre-tax price = (Price per unit area) × (Total area purchased) = $C \\times ab(1 + \\frac{x}{100})$.
-5.  Final total price (p) = (Total pre-tax price) × (1 + tax rate) = $C \\times ab(1 + \\frac{x}{100}) \\times (1 + \\frac{r}{100})$.
-6.  Now, solve for $C:
-    $C = \\frac{p}{ab(1 + \\frac{x}{100})(1 + \\frac{r}{100})}$.
+4.  Total pre-tax price = (Price per unit area) × (Total area purchased) = $\\C \\times ab(1 + \\frac{x}{100})$.
+5.  Final total price (p) = (Total pre-tax price) × (1 + tax rate) = $\\C \\times ab(1 + \\frac{x}{100}) \\times (1 + \\frac{r}{100})$.
+6.  Now, solve for \\$C:
+    $\\C = \\frac{p}{ab(1 + \\frac{x}{100})(1 + \\frac{r}{100})}$.
 
 This matches option C. Note that option D is an algebraic equivalent:
 $ab(1 + \\frac{x}{100})(1 + \\frac{r}{100}) = ab(\\frac{100+x}{100})(\\frac{100+r}{100}) = \\frac{ab(100+x)(100+r)}{10000}$.
@@ -373,10 +373,9 @@ C(10, 3) = 10! / (3!(10-3)!)
 C(10, 3) = 10! / (3!7!)
 C(10, 3) = (10 × 9 × 8 × 7!) / ((3 × 2 × 1) × 7!)
 C(10, 3) = (10 × 9 × 8) / (3 × 2 × 1)
-C(10, 3) = 10 × 3 × 4 = 120.
+C(10, 3) = 10 × 3 × 4 = 120
+Therefore, 120 different triangles can be formed.
 
-Thus, there are 120 different triangles that can be formed.
-
-The correct answer is C.`
+Thus, the correct answer is C.`
   }
 };

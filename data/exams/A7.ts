@@ -48,19 +48,22 @@ Thus, the correct answer is E.`
         { label: "D", text: "360" },
         { label: "E", text: "720" }
     ],
-    correctAnswer: 'B',
-    explanation: `This problem involves choosing one person from each nationality to form a group of 3. Since the question asks for how many "distinct teams" can be formed, and doesn't specify any roles or order within the team, this is a combination problem.
+    correctAnswer: 'D',
+    explanation: `This problem involves two stages: selection and arrangement, as the term "distinct teams" can imply that the roles or order within the team matter.
 
-We need to find the number of ways to perform three independent choices:
-1.  **Choose one Spaniard:** There are 5 Spaniards, so there are $^5C_1 = 5$ ways.
-2.  **Choose one German:** There are 4 Germans, so there are $^4C_1 = 4$ ways.
-3.  **Choose one Frenchman:** There are 3 Frenchmen, so there are $^3C_1 = 3$ ways.
+1.  **Selection (Combination):** First, we need to choose one person from each nationality.
+    -   Number of ways to choose 1 Spaniard from 5: $^5C_1 = 5$
+    -   Number of ways to choose 1 German from 4: $^4C_1 = 4$
+    -   Number of ways to choose 1 Frenchman from 3: $^3C_1 = 3$
+    The total number of combinations of 3 people (one from each country) is $5 \\times 4 \\times 3 = 60$.
 
-To find the total number of distinct teams, we multiply the number of choices for each position (the fundamental counting principle):
-Total distinct teams = (Choices for Spaniard) × (Choices for German) × (Choices for Frenchman)
-Total = $5 \\times 4 \\times 3 = 60$.
+2.  **Arrangement (Permutation):** If the roles within the team are distinct (e.g., team captain, navigator, etc.), or if the order of selection creates a distinct team, we must arrange the 3 chosen people.
+    -   Number of ways to arrange 3 people: $3! = 3 \\times 2 \\times 1 = 6$.
 
-Thus, there are 60 distinct teams that can be formed.`
+Total number of distinct teams = (Number of combinations) $\\times$ (Number of arrangements)
+Total = $60 \\times 6 = 360$.
+
+Thus, there are 360 distinct teams that can be formed.`
   },
   3: {
     id: 'A7-q3',

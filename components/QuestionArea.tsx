@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Question, AppMode } from '../types';
+import { Question, AppMode } from '../types.ts';
 
 declare global {
   interface Window {

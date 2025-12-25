@@ -1,5 +1,5 @@
 import { Question, Option } from '../../types.ts';
-import { DS_OPTIONS } from '../questions.ts';
+import { DS_OPTIONS } from '../questions';
 
 // Specific options for A4-Q2
 const PS_NUMERICAL_OPTIONS_A4_Q2: Option[] = [
