@@ -1,0 +1,35 @@
+name: Deploy to GitHub Pages
+
+on:
+  # 在推送到 main 分支時觸發工作流程
+  push:
+    branches:
+      - main 
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # 允許此工作流程寫入儲存庫內容，以推送 gh-pages 分支
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # 使用一個穩定的 Node.js 長期支援版本
+          cache: 'npm'
+
+      - name: Install dependencies 📦
+        run: npm install
+
+      - name: Build project 🏗️
+        run: npm run build
+
+      - name: Deploy to GitHub Pages 🚀
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
