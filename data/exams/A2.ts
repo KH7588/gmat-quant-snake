@@ -6,29 +6,29 @@ export const EXAM_A2_QUESTIONS: Record<number, Question> = {
     id: 'A2-q1',
     text: 'If $x$ and $y$ are positive integers, is $x$ even?',
     statements: [
-      '$2x+y$ is odd',
-      '$5x+3y$ is odd'
+      '\\$2x+y$ is odd',
+      '\\$5x+3y$ is odd'
     ],
     options: DS_OPTIONS,
     correctAnswer: 'C',
-    explanation: `**Statement (1):** $2x + y$ is odd.
-      Since $x$ is a positive integer, $2x$ is always an even number.
+    explanation: `**Statement (1):** \\$2x + y$ is odd.
+      Since $x$ is a positive integer, \\$2x$ is always an even number.
       For (even $+ y$) to be odd, $y$ must be an odd number.
       However, this statement gives us no information about $x$ ($x$ can be even or odd).
       Therefore, Statement (1) ALONE is NOT sufficient to determine if $x$ is even.
       
-      **Statement (2):** $5x + 3y$ is odd.
+      **Statement (2):** \\$5x + 3y$ is odd.
       We can analyze the parities:
-      *   If $x$ is even, then $5x$ is even. For (even $+ 3y$) to be odd, $3y$ must be odd, which means $y$ must be odd. (So, $x=\\text{even}, y=\\text{odd}$ is a possibility)
-      *   If $x$ is odd, then $5x$ is odd. For (odd $+ 3y$) to be odd, $3y$ must be even, which means $y$ must be even. (So, $x=\\text{odd}, y=\\text{even}$ is a possibility)
+      *   If $x$ is even, then \\$5x$ is even. For (even $+ 3y$) to be odd, \\$3y$ must be odd, which means $y$ must be odd. (So, $x=\\text{even}, y=\\text{odd}$ is a possibility)
+      *   If $x$ is odd, then \\$5x$ is odd. For (odd $+ 3y$) to be odd, \\$3y$ must be even, which means $y$ must be even. (So, $x=\\text{odd}, y=\\text{even}$ is a possibility)
       Since $x$ can be either even or odd, Statement (2) ALONE is NOT sufficient.
       
       **Combining Statement (1) and Statement (2):**
       From Statement (1), we know $y$ must be odd.
-      Substitute $y = \\text{odd}$ into Statement (2): $5x + 3(\\text{odd})$ is odd.
-      $5x + \\text{odd}$ is odd.
-      For ($5x + \\text{odd}$) to be odd, $5x$ must be even.
-      For $5x$ to be even, $x$ must be even.
+      Substitute $y = \\text{odd}$ into Statement (2): \\$5x + 3(\\text{odd})$ is odd.
+      \\$5x + \\text{odd}$ is odd.
+      For (\\$5x + \\text{odd}$) to be odd, \\$5x$ must be even.
+      For \\$5x$ to be even, $x$ must be even.
       Thus, by combining both statements, we can definitively conclude that $x$ is even.
       Therefore, BOTH statements TOGETHER are sufficient.
       
@@ -47,38 +47,38 @@ export const EXAM_A2_QUESTIONS: Record<number, Question> = {
       Also, the remainder must always be less than the divisor. So, $R(x) < k$.
       
       **Statement (1):** $R(k+32) = 8$.
-      This means when $(k+32)$ is divided by $k$, the remainder is $8$.
+      This means when $(k+32)$ is divided by $k$, the remainder is \\$8$.
       We know that $(k+32) = 1 \\times k + 32$.
-      If $32$ is less than $k$, then $R(k+32)$ would be $32$. But the remainder is given as $8$.
-      This implies that $32$ is greater than $k$, and $32$ can be expressed as: $32 = q \\times k + 8$, where $q$ is an integer quotient and $8$ is the remainder.
-      Since $8$ is the remainder, it must be true that $8 < k$.
+      If \\$32$ is less than $k$, then $R(k+32)$ would be \\$32$. But the remainder is given as \\$8$.
+      This implies that \\$32$ is greater than $k$, and \\$32$ can be expressed as: \\$32 = q \\times k + 8$, where $q$ is an integer quotient and \\$8$ is the remainder.
+      Since \\$8$ is the remainder, it must be true that \\$8 < k$.
       
-      Now, let's analyze possible values for $k$ such that $32 = q \\times k + 8$:
-      $32 - 8 = q \\times k$.
-      $24 = q \\times k$.
+      Now, let's analyze possible values for $k$ such that \\$32 = q \\times k + 8$:
+      \\$32 - 8 = q \\times k$.
+      \\$24 = q \\times k$.
       
-      Also, we know $8 < k$.
+      Also, we know \\$8 < k$.
       Possible integer values for $k$:
-      *   If $q=1, k=24$. ($8 < 24$. This works.)
-      *   If $q=2, k=12$. ($8 < 12$. This works.)
-      *   If $q=3, k=8$. ($8 < 8$. This does NOT work, remainder must be strictly less than divisor.)
+      *   If $q=1, k=24$. (\\$8 < 24$. This works.)
+      *   If $q=2, k=12$. (\\$8 < 12$. This works.)
+      *   If $q=3, k=8$. (\\$8 < 8$. This does NOT work, remainder must be strictly less than divisor.)
       
-      So, possible values for $k$ are $24$ and $12$.
-      In both cases, $k$ is greater than $10$.
+      So, possible values for $k$ are \\$24$ and \\$12$.
+      In both cases, $k$ is greater than \\$10$.
       Therefore, Statement (1) ALONE is sufficient.
       
       **Statement (2):** $R(k+42) = 6$.
-      Similar to Statement (1), this implies $6 < k$.
-      Also, $42 = q \\times k + 6$.
-      $36 = q \\times k$.
+      Similar to Statement (1), this implies \\$6 < k$.
+      Also, \\$42 = q \\times k + 6$.
+      \\$36 = q \\times k$.
       
-      Possible integer values for $k$ such that $6 < k$:
-      *   If $q=1, k=36$. ($6 < 36$. This works.)
-      *   If $q=2, k=18$. ($6 < 18$. This works.)
-      *   If $q=3, k=12$. ($6 < 12$. This works.)
-      *   If $q=4, k=9$. ($6 < 9$. This works.)
+      Possible integer values for $k$ such that \\$6 < k$:
+      *   If $q=1, k=36$. (\\$6 < 36$. This works.)
+      *   If $q=2, k=18$. (\\$6 < 18$. This works.)
+      *   If $q=3, k=12$. (\\$6 < 12$. This works.)
+      *   If $q=4, k=9$. (\\$6 < 9$. This works.)
       
-      Since $k$ could be $9$ (which is not $> 10$) or $k$ could be $12$ (which is $> 10$), Statement (2) ALONE is NOT sufficient.
+      Since $k$ could be \\$9$ (which is not $> 10$) or $k$ could be \\$12$ (which is $> 10$), Statement (2) ALONE is NOT sufficient.
       
       Thus, the correct answer is A.`
   },
@@ -86,25 +86,25 @@ export const EXAM_A2_QUESTIONS: Record<number, Question> = {
     id: 'A2-q3',
     text: 'If the symbol $\\triangle$ can represent addition, subtraction, multiplication, or division, which operation does it represent?',
     statements: [
-      '$2^{4\\triangle2}=4^{1\\triangle1}$',
-      '$2^{4\\triangle2} = (4\\triangle2)^2$'
+      '\\$2^{4\\triangle2}=4^{1\\triangle1}$',
+      '\\$2^{4\\triangle2} = (4\\triangle2)^2$'
     ],
     options: DS_OPTIONS,
     correctAnswer: 'A',
     explanation: `Let's test each operation for both statements.
       
-      **Statement (1):** $2^{4\\triangle2} = 4^{1\\triangle1}$
-      *   **Addition (+):** $2^{4+2} = 2^6 = 64$; $4^{1+1} = 4^2 = 16$. ($64 \\neq 16$)
-      *   **Subtraction (-):** $2^{4-2} = 2^2 = 4$; $4^{1-1} = 4^0 = 1$. ($4 \\neq 1$)
-      *   **Multiplication ($\\times$):** $2^{4\\times2} = 2^8 = 256$; $4^{1\\times1} = 4^1 = 4$. ($256 \\neq 4$)
-      *   **Division (/):** $2^{4/2} = 2^2 = 4$; $4^{1/1} = 4^1 = 4$. ($4 = 4$). This works.
+      **Statement (1):** \\$2^{4\\triangle2} = 4^{1\\triangle1}$
+      *   **Addition (+):** \\$2^{4+2} = 2^6 = 64$; \\$4^{1+1} = 4^2 = 16$. (\\$64 \\neq 16$)
+      *   **Subtraction (-):** \\$2^{4-2} = 2^2 = 4$; \\$4^{1-1} = 4^0 = 1$. (\\$4 \\neq 1$)
+      *   **Multiplication ($\\times$):** \\$2^{4\\times2} = 2^8 = 256$; \\$4^{1\\times1} = 4^1 = 4$. (\\$256 \\neq 4$)
+      *   **Division (/):** \\$2^{4/2} = 2^2 = 4$; \\$4^{1/1} = 4^1 = 4$. (\\$4 = 4$). This works.
       From Statement (1) alone, the symbol $\\triangle$ MUST represent division. Sufficient.
       
-      **Statement (2):** $2^{4\\triangle2} = (4\\triangle2)^2$
-      *   **Addition (+):** $2^{4+2} = 64$; $(4+2)^2 = 36$. ($64 \\neq 36$)
-      *   **Subtraction (-):** $2^{4-2} = 4$; $(4-2)^2 = 4$. This works.
-      *   **Multiplication ($\\times$):** $2^{4\\times2} = 256$; $(4\\times2)^2 = 64$. ($256 \\neq 64$)
-      *   **Division (/):** $2^{4/2} = 4$; $(4/2)^2 = 4$. This works.
+      **Statement (2):** \\$2^{4\\triangle2} = (4\\triangle2)^2$
+      *   **Addition (+):** \\$2^{4+2} = 64$; $(4+2)^2 = 36$. (\\$64 \\neq 36$)
+      *   **Subtraction (-):** \\$2^{4-2} = 4$; $(4-2)^2 = 4$. This works.
+      *   **Multiplication ($\\times$):** \\$2^{4\\times2} = 256$; $(4\\times2)^2 = 64$. (\\$256 \\neq 64$)
+      *   **Division (/):** \\$2^{4/2} = 4$; $(4/2)^2 = 4$. This works.
       Since subtraction and division both satisfy Statement (2), it is NOT sufficient.
       
       Thus, the correct answer is A.`
@@ -112,7 +112,7 @@ export const EXAM_A2_QUESTIONS: Record<number, Question> = {
   4: {
     id: 'A2-q4',
     // FIX: Changed \\' to \' to correctly escape the apostrophe in the string.
-    text: 'A person\'s new daily wage is $125\\%$ greater than his former daily wage. If he works $10\\%$ fewer hours per day, by what percentage does his new hourly wage exceed his former hourly wage?',
+    text: 'A person\'s new daily wage is \\$125\\%$ greater than his former daily wage. If he works \\$10\\%$ fewer hours per day, by what percentage does his new hourly wage exceed his former hourly wage?',
     options: [
       { label: "A", text: "125%" },
       { label: "B", text: "150%" },
@@ -125,7 +125,7 @@ export const EXAM_A2_QUESTIONS: Record<number, Question> = {
       New daily wage $D_n = D_f + 1.25 D_f = 2.25 D_f$.
       New hours $H_n = H_f - 0.10 H_f = 0.90 H_f$.
       New hourly wage $W_n = D_n / H_n = (2.25 D_f) / (0.90 H_f) = 2.5 (D_f / H_f) = 2.5 W_f$.
-      The new wage is $2.5$ times the old wage. This is a $150\\%$ increase.
+      The new wage is \\$2.5$ times the old wage. This is a \\$150\\%$ increase.
       Percentage increase = $\\frac{W_n - W_f}{W_f} \\times 100\\% = \\frac{2.5 W_f - W_f}{W_f} \\times 100\\% = 1.5 \\times 100\\% = 150\\%$.
       
       Thus, the correct answer is B.`
@@ -134,24 +134,24 @@ export const EXAM_A2_QUESTIONS: Record<number, Question> = {
     id: 'A2-q5',
     text: 'What is the mean of three numbers $x, y,$ and $z$?',
     statements: [
-      '$2x-y+z=6$',
+      '\\$2x-y+z=6$',
       '$x+4y+2z=9$'
     ],
     options: DS_OPTIONS,
     correctAnswer: 'C',
     explanation: `We need to find the value of $(x+y+z)/3$. This requires finding the sum $x+y+z$.
       
-      **Statement (1):** $2x - y + z = 6$. Insufficient as it's one equation with three variables.
+      **Statement (1):** \\$2x - y + z = 6$. Insufficient as it's one equation with three variables.
       **Statement (2):** $x + 4y + 2z = 9$. Also insufficient for the same reason.
       
       **Combining (1) and (2):**
       We have a system of two equations. We can try to eliminate variables to find the sum.
       Let's add the two equations:
       $(2x - y + z) + (x + 4y + 2z) = 6 + 9$
-      $3x + 3y + 3z = 15$
+      \\$3x + 3y + 3z = 15$
       Divide by 3:
       $x + y + z = 5$.
-      Since we found a unique value for the sum, we can find the mean: Mean = $5/3$.
+      Since we found a unique value for the sum, we can find the mean: Mean = \\$5/3$.
       BOTH statements TOGETHER are sufficient.
       
       Thus, the correct answer is C.`
@@ -160,11 +160,11 @@ export const EXAM_A2_QUESTIONS: Record<number, Question> = {
     id: 'A2-q6',
     text: 'An investment yields an annual interest rate of $a$ percent for the first year and $b$ percent for the second year. If the total return over the two-year period is the same as that of an investment that earns a constant annual rate of $x$ percent each year, express $x$ in terms of $a$ and $b$.',
     options: [
-      { label: "A", text: '$100\\left(\\sqrt{\\left(1 + \\frac{a}{100}\\right)\\left(1 + \\frac{b}{100}\\right)} - 1\\right)$' },
+      { label: "A", text: '\\$100\\left(\\sqrt{\\left(1 + \\frac{a}{100}\\right)\\left(1 + \\frac{b}{100}\\right)} - 1\\right)$' },
       { label: "B", text: '$\\sqrt{ \\left( 1 + \\frac{a}{100} \\right) \\left( 1 + \\frac{b}{100} \\right) } - 1$' },
       { label: "C", text: '$\\frac{a+b}{2}$' },
-      { label: "D", text: '$100\\left[\\left( 1 + \\frac{a}{100} \\right)\\left( 1 + \\frac{b}{100} \\right) - 1\\right]$' },
-      { label: "E", text: '$100  \\frac{a+b}{200} $' }
+      { label: "D", text: '\\$100\\left[\\left( 1 + \\frac{a}{100} \\right)\\left( 1 + \\frac{b}{100} \\right) - 1\\right]$' },
+      { label: "E", text: '\\$100  \\frac{a+b}{200} $' }
     ],
     correctAnswer: 'A',
     explanation: `Let $P$ be the principal.

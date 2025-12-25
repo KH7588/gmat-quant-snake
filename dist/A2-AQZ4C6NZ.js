@@ -56,7 +56,7 @@ import{a as e}from"./chunk-JKPGA2EE.js";import"./chunk-FW4363Y4.js";var i={1:{id
       
       Since $k$ could be \\$9$ (which is not $> 10$) or $k$ could be \\$12$ (which is $> 10$), Statement (2) ALONE is NOT sufficient.
       
-      Thus, the correct answer is A.`},3:{id:"A2-q3",text:"If the symbol $\\triangle$ can represent addition, subtraction, multiplication, or division, which operation does it represent?",statements:["\\$2^{4\\\\triangle2}=4^{1\\\\triangle1}$","\\$2^{4\\\\triangle2} = (4\\\\triangle2)^2$"],options:e,correctAnswer:"A",explanation:`Let's test each operation for both statements.
+      Thus, the correct answer is A.`},3:{id:"A2-q3",text:"If the symbol $\\triangle$ can represent addition, subtraction, multiplication, or division, which operation does it represent?",statements:["\\$2^{4\\triangle2}=4^{1\\triangle1}$","\\$2^{4\\triangle2} = (4\\triangle2)^2$"],options:e,correctAnswer:"A",explanation:`Let's test each operation for both statements.
       
       **Statement (1):** \\$2^{4\\triangle2} = 4^{1\\triangle1}$
       *   **Addition (+):** \\$2^{4+2} = 2^6 = 64$; \\$4^{1+1} = 4^2 = 16$. (\\$64 \\neq 16$)
@@ -215,4 +215,4 @@ Now we need to find which option is divisible by 14 (i.e., divisible by both 2 a
 Since n+3 is always divisible by 7 and always divisible by 2, it is always divisible by their least common multiple, 14.
 
 Thus, the correct answer is A.`}};export{i as EXAM_A2_QUESTIONS};
-//# sourceMappingURL=A2-R7H5FZBX.js.map
+//# sourceMappingURL=A2-AQZ4C6NZ.js.map

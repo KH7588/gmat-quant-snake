@@ -18,10 +18,8 @@ try {
       // Fix 1: Ensure import path for 'questions' does not have a .ts extension
       content = content.replace(/'\.\.\/questions\.ts'/g, "'../questions'");
 
-      // Fix 2: Escape standalone dollar signs followed by a number to prevent MathJax errors
-      // This regex looks for a '$' that is NOT preceded by a backslash, and is followed by a digit.
-      // It avoids breaking existing LaTeX like `$\frac{...}$` while fixing price formats like `$52.50`.
-      content = content.replace(/(?<!\\)\$(\d)/g, '\\\\$$$1');
+      // BUGGY LINE REMOVED: The line that replaced dollar signs was here.
+      // It was incorrectly escaping math delimiters as if they were currency.
       
       if (content !== originalContent) {
         fs.writeFileSync(filePath, content, 'utf8');
