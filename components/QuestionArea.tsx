@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Question, AppMode } from '../types.ts';
 
 declare global {
@@ -22,23 +22,36 @@ export const QuestionArea: React.FC<QuestionAreaProps> = ({
   mode,
   userAnswer
 }) => {
+  const questionContentRef = useRef<HTMLDivElement>(null);
 
-  // Function to format text (now just returns the raw string for MathJax to process)
-  // It will also apply a class for MathJax to process
-  // Fix: Use React.ReactElement for JSX return type to resolve "Cannot find namespace 'JSX'" error.
+  // This function now safely renders text content for MathJax to process.
+  // It splits the text by <br> tags to handle line breaks correctly without
+  // using dangerouslySetInnerHTML, which was causing rendering issues.
   const formatText = (text: string | null): React.ReactElement | null => {
     if (!text) return null;
-    // MathJax will process elements with class 'tex2jax_process' by default
-    // We use dangerouslySetInnerHTML here because the content is now trusted LaTeX/HTML,
-    // and MathJax will transform the LaTeX parts.
-    return <span className="tex2jax_process" dangerouslySetInnerHTML={{ __html: text }} />;
+    
+    // Split by <br/> or <br> to handle line breaks manually
+    const parts = text.split(/<br\s*\/?>/i);
+
+    return (
+      <span className="tex2jax_process">
+        {parts.map((part, index) => (
+          <React.Fragment key={index}>
+            {part}
+            {index < parts.length - 1 && <br />}
+          </React.Fragment>
+        ))}
+      </span>
+    );
   };
 
   // Trigger MathJax typesetting whenever the question changes
   useEffect(() => {
-    if (window.MathJax) {
-      // Use typesetPromise for asynchronous rendering
-      window.MathJax.typesetPromise();
+    if (window.MathJax && questionContentRef.current) {
+      // Tell MathJax to typeset only the content area that has changed.
+      // This is more efficient and reliable than re-scanning the whole page.
+      window.MathJax.typesetPromise([questionContentRef.current])
+        .catch((err: any) => console.error('MathJax typesetting failed:', err));
     }
   }, [question]); // Re-run effect when question object changes
 
@@ -63,7 +76,7 @@ export const QuestionArea: React.FC<QuestionAreaProps> = ({
 
   return (
     <div className="flex-1 bg-white p-8 overflow-y-auto pb-8 relative">
-      <div className="w-full">
+      <div className="w-full" ref={questionContentRef}>
         {/* SVG Image Area (e.g. for Spinner) */}
         {question.svg && (
           <div 
