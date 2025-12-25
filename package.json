@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "node scripts/lint-exams.js && node copy-assets.js && esbuild index.tsx --bundle --format=esm --servedir=dist --outfile=dist/index.js --watch --loader:.tsx=tsx --loader:.ts=ts",
-    "build": "rm -rf dist && mkdir dist && cp index.html dist/ && esbuild index.tsx --bundle --splitting --format=esm --minify --sourcemap --outdir=dist --target=es2020 --loader:.tsx=tsx --loader:.ts=ts --external:react --external:react-dom/* --external:lucide-react"
+    "build": "node scripts/lint-exams.js && node clean.js && node copy-assets.js && esbuild index.tsx --bundle --splitting --format=esm --minify --sourcemap --outdir=dist --target=es2020 --loader:.tsx=tsx --loader:.ts=ts --resolve-extensions=.tsx,.ts,.js --external:react --external:react-dom/* --external:lucide-react"
   },
   "eslintConfig": {
     "extends": [
