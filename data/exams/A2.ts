@@ -86,8 +86,8 @@ export const EXAM_A2_QUESTIONS: Record<number, Question> = {
     id: 'A2-q3',
     text: 'If the symbol $\\triangle$ can represent addition, subtraction, multiplication, or division, which operation does it represent?',
     statements: [
-      '$2^{4\\\\triangle2}=4^{1\\\\triangle1}$',
-      '$2^{4\\\\triangle2} = (4\\\\triangle2)^2$'
+      '$2^{4\\triangle2}=4^{1\\triangle1}$',
+      '$2^{4\\triangle2} = (4\\triangle2)^2$'
     ],
     options: DS_OPTIONS,
     correctAnswer: 'A',
